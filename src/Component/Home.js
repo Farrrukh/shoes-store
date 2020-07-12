@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
   },
 home: {
     
-    marginTop:'3%'
+    marginTop:'5%'
 },
 logo:{
   width:320,

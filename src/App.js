@@ -3,7 +3,7 @@ import Header from './Component/Header'
 import { BrowserRouter as Router, Route,Switch } from 'react-router-dom'
 import Cart from './Component/Cart'
 import Home from './Component/Home'
-import Product from './Component/Product'
+// import ProductList from './Component/ProductList'
 import Slider from './Component/Slider'
 import {GlobalProvider} from './Context/CreateContext'
 
@@ -17,8 +17,7 @@ function App() {
           <Slider/>
             <Switch>  
             <Route path="/cart" component={Cart} />
-            <Route path="/product" component={Product} />
-            <Route path="/" component={Home} />
+            <Route exact path="/" component={Home} />
             </Switch>
           </Router>
         </div>
