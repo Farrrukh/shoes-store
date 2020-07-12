@@ -159,7 +159,7 @@ export default function Header() {
          
           <Button onClick={()=> navigate('/')}  className={classes.btn} color="inherit"><Home/></Button>
           <Button onClick={()=> navigate('cart')} className={classes.btn} color="inherit"><ShoppingCartIcon/></Button>
-          <Button onClick={()=> navigate('repo')} className={classes.btn} color="inherit"><GitHub/></Button>
+          
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton onClick={()=> navigate('cart')} aria-label="show  new cart"  color="inherit">

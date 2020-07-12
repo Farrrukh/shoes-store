@@ -2,14 +2,16 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
-import { FaFacebookF, FaLinkedin, FaGithub } from "react-icons/fa";
+import  Facebook from "@material-ui/icons/Facebook";
+import  GitHub from "@material-ui/icons/GitHub";
+import  LinkedIn from "@material-ui/icons/LinkedIn";
 import { makeStyles } from "@material-ui/core/styles";
 import Link from "@material-ui/core/Link";
-import { facebookURL, linkedInURL, githubURL } from "";
+import { facebookURL, linkedInURL, githubURL } from "../utils/social";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: "#3f51b5",
     color: theme.palette.secondary.contrastText,
   },
 
@@ -34,21 +36,21 @@ const Footer = () => {
   return (
     <footer className={classes.footer}>
       <Container className={classes.container}>
-        <Typography>Created by Salman Zafar</Typography>
+        <Typography>Design By : Farrukh Khan</Typography>
         <div>
           <IconButton className={classes.btn} aria-label="facebook">
             <Link href={facebookURL} color="inherit" target="_blank">
-              <FaFacebookF />
+              <Facebook />
             </Link>
           </IconButton>
           <IconButton className={classes.btn} aria-label="github">
             <Link href={githubURL} color="inherit" target="_blank">
-              <FaGithub />
+              <GitHub />
             </Link>
           </IconButton>
           <IconButton className={classes.btn} aria-label="linkedin">
             <Link href={linkedInURL} color="inherit" target="_blank">
-              <FaLinkedin />
+              <LinkedIn />
             </Link>
           </IconButton>
         </div>
