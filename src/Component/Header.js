@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -9,9 +9,12 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import { Link } from 'react-router-dom';
+import GitHub from "@material-ui/icons/GitHub";
+import Home from '@material-ui/icons/Home';
 import { Button } from "@material-ui/core";
-import cart from './Cart'
+import {  useNavigate } from 'react-router-dom';
+import {GlobalContext } from '../Context/CreateContext'
+
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -78,6 +81,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Header() {
+  const {cart} = useContext(GlobalContext)
+  const navigate=useNavigate()
     
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -130,7 +135,7 @@ export default function Header() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-     <MenuItem onClick={()=> Link('cart')}>
+     <MenuItem onClick={()=> navigate('cart')}>
         <IconButton   aria-label="show 4 new mails" color="inherit">
         <Badge  badgeContent={cart.length} color="secondary">
                 <ShoppingCartIcon />
@@ -152,12 +157,12 @@ export default function Header() {
             SHOES STORE
           </Typography>
          
-          <Button onClick={()=> Link('/')}  className={classes.btn} color="inherit">HOME</Button>
-          <Button onClick={()=> Link('cart')} className={classes.btn} color="inherit">CART</Button>
-          <Button onClick={()=> Link('repo')} className={classes.btn} color="inherit">MY REPO</Button>
+          <Button onClick={()=> navigate('/')}  className={classes.btn} color="inherit"><Home/></Button>
+          <Button onClick={()=> navigate('cart')} className={classes.btn} color="inherit"><ShoppingCartIcon/></Button>
+          <Button onClick={()=> navigate('repo')} className={classes.btn} color="inherit"><GitHub/></Button>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton onClick={()=> Link('cart')} aria-label="show  new cart"  color="inherit">
+            <IconButton onClick={()=> navigate('cart')} aria-label="show  new cart"  color="inherit">
               <Badge className={classes.badge} badgeContent={cart.length} color="secondary">
               <span className={classes.digit}>{cart.length}</span><ShoppingCartIcon /> 
               </Badge>

@@ -1,0 +1,225 @@
+.body{
+    margin-top: 65px;
+   
+}
+
+.box1{
+    
+    height: auto;
+    margin-bottom: 200px;
+}
+
+.strip{
+    
+    background-color:#3f51b5;
+    height: 50PX;
+    font-weight: bold;
+    padding: 7px;
+
+}
+.header{
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    margin:13px 40px 0 25px;
+
+}
+.header h4{
+    justify-content: center;
+    justify-items: center;
+    
+}
+/* .product{
+    display: flex;
+    justify-content: space-between;
+    margin:0 40px 0 25px;
+    height: 200px;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    position: relative;
+    
+} */
+.name{
+    width: 30%;
+   
+}
+.qty{
+    
+    border: 1px solid grey;
+    border-radius: 4px;
+    padding:8px;
+    
+}
+.minus{
+    cursor: pointer;
+}
+.minus:hover{
+    opacity: 0.7;
+    color: red;
+}
+
+.plus{
+    cursor: pointer;
+   
+}
+
+.plus:hover{
+    opacity: 0.7;
+    color: green;
+}
+
+.price{
+    background-color: #ccbebe2f;
+    
+}
+
+.endPrice{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+.discount{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+.endTotal{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    padding: 25px 0;
+    margin: 10px;
+}
+
+.del{
+    margin-left: 10px;
+}
+.del:hover{
+   cursor: pointer;
+    color: red;
+}
+.checkout{
+    text-align: center;
+    padding: 10px ;
+    background-color:#3f51b5;
+    color:#fff ;
+}
+.checkout:hover{
+    cursor: pointer;
+    opacity: 0.9;
+}
+.messege{
+    text-align: center;
+    line-height: 2;
+    margin-bottom: 220px;
+}
+.messege a{
+    text-decoration:  none;
+    color :rgba(49, 49, 160, 0.561)
+}
+li{
+    list-style: none;
+}
+
+/* @media(max-width:900px){
+    .qty{
+        margin-right: 50px;
+    }
+}
+@media(max-width:960px){
+    .qty{
+        margin-right: 60px;
+    }
+}
+@media(max-width:780px){
+    .qty{
+        padding:3px;
+        margin-right: 50px;
+    }
+}
+/* Cart Items New Style */
+
+.product ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+.qtyTop{
+    display: flex;
+    align-content: center;
+    
+}
+.qtyTop li{
+    margin:0 20px;
+    align-content: center;
+}
+
+.header2{
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    display: flex;
+    justify-content: space-around;
+    margin:13px 40px 0 25px;
+
+}
+
+@media(max-width:600px){
+    .product ul{
+        display: flex;
+        justify-content: space-between;
+        margin:0;
+        padding:0;
+        margin-left: 20px;
+       margin-right: 20px; 
+       margin-top: 12px;
+    }
+    .header {
+        
+        color: rgb(255, 255, 255);
+        font-weight: 800;
+        display: flex;
+        justify-content: space-between;
+        margin:0;
+        padding:0;
+        margin-left: 20px;
+       margin-right: 20px;
+       margin-top: 12px;
+    }
+    .qty{
+        border:none;
+        
+    }
+
+} 
+
+@media(max-width:400px){
+    .product ul{
+        display: flex;
+        justify-content: space-between;
+        margin:0;
+        padding:0;
+        margin-left: 10px;
+       margin-right: 10px;
+       margin-top: 12px;
+        
+    }
+    .header {
+        margin:0;
+        padding:0;
+        color: rgb(255, 255, 255);
+        font-weight: 800;
+        display: flex;
+        flex-grow: inherit;
+        justify-content: space-between;
+       margin-left: 10px;
+       margin-right: 10px;
+       margin-top: 12px;
+    
+    }
+
+    .qtyTop li{
+        margin:0 2px;
+        align-content: center;
+    }
+} 

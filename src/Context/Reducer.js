@@ -22,6 +22,13 @@ export default (state,action)=>{
                      ...state,
                      cart:state.cart
                 }
+        case 'CHECKOUT':
+                
+            return{ 
+                    ...state,
+                    cart: [],
+                            
+                    }
         
     
         default:

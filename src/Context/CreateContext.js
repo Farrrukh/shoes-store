@@ -51,6 +51,12 @@ export const GlobalProvider=({children})=>{
             payload:id
         })
     }
+    function checkout(){
+        dispatch({
+            type:'CHECKOUT',
+            
+        })
+    }
 
     return(
         <GlobalContext.Provider value={{product:state.product,
@@ -58,7 +64,8 @@ export const GlobalProvider=({children})=>{
         addToCarts,
         removeFromCart,
         increase,
-        decrease}}>
+        decrease,
+        checkout}}>
             {children}
         </GlobalContext.Provider>
     )

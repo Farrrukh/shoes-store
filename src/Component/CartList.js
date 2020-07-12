@@ -1,93 +1,41 @@
-import React, { useContext } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import {GlobalContext} from '../Context/CreateContext';
-import Button from '@material-ui/core/Button';
+import React, { useContext } from "react";
+import classes from "./Cart.module.css"
+import { GlobalContext } from '../Context/CreateContext'
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import ExpandLessIcon from "@material-ui/icons/ExpandLess";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
+const CartItems = ({ value, index }) => {
+  const { removeFromCart,
+    increase,
+    decrease } = useContext(GlobalContext);
 
+  const { id } = value;
+  const handleMinus = () => {
+    value.quantity <= 1 ? removeFromCart(id) : decrease(id);
+  };
+  const handlePlus = () => {
+    increase(id);
+  };
+  const handleDel = () => {
+    removeFromCart(id);
+  };
 
-
-const useStyles = makeStyles({
-  table: {
-    minWidth: 700,
-  },
-});
-
-// function ccyFormat(num) {
-//   return `${num.toFixed(2)}`;
-// }
-
-
-
-
-
-
-export default function CartList({product,price}) {
-    // function subtotal() {
-    //     return product.map((e) => e.price).reduce((sum, i) => sum + i, 0);
-    //   }
-      
-    // const invoiceSubtotal = subtotal();
-    const {removeFromCart,
-        increase,
-        decrease}=useContext(GlobalContext)
-  const classes = useStyles();
-  const remove=()=>{
-         removeFromCart(product.id) 
-     }
-
- const inc=()=>{
-     increase(product.id)
- }
- const dec=()=>{
-    if (product.quantity <= 1) {
-        remove()
-    } else {
-        decrease(product.id);
-    }
- }
   return (
-     
-      <Table className={classes.table} aria-label="spanning table">
-        <TableHead>
-          <TableRow>
-            <TableCell align="center" colSpan={3}>
-              Details
-            </TableCell>
-            <TableCell align="right">Price</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Desc</TableCell>
-            <TableCell align="right">Name</TableCell>
-            <TableCell align="right">Price</TableCell>
-            <TableCell align="right">Increase</TableCell>
-            <TableCell align="right">Decrease</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          
-            <TableRow>
-              <TableCell>{product.name}</TableCell>
-              <TableCell align="right">{product.price}</TableCell>
-              <Button color="primary" onClick={inc}>
-                        <i className="fa fa-plus" aria-hidden="true"></i>
-                    </Button>
-                    <Button color="secondary" onClick={dec}>
-                        <i className="fa fa-minus" aria-hidden="true"></i>
-                    </Button>
-            </TableRow>
-        
+    <div className={classes.product}>
+      <ul className={classes.header2}>
+        <li>{index + 1}</li>
+        <li style={{ width: "100px" }}>{value.name}</li>
 
-          {/* <TableRow>
-            <TableCell rowSpan={3} />
-            <TableCell colSpan={2}>Cart Total</TableCell>
-            <TableCell align="right">{ccyFormat(invoiceSubtotal)}</TableCell>
-          </TableRow> */}
-        </TableBody>
-      </Table>
+        <div className={classes.qtyTop}>
+          <ExpandLessIcon onClick={handlePlus} className={classes.plus} />
+          <li className={classes.qty}>{value.quantity}</li>
+          <ExpandMoreIcon onClick={handleMinus} className={classes.minus} />
+          <DeleteForeverIcon onClick={handleDel} className={classes.del} />
+        </div>
+        <li>{value.price}</li>
+      </ul>
+    </div>
   );
-}
+};
+export default CartItems;
