@@ -9,7 +9,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import GitHub from "@material-ui/icons/GitHub";
+
 import Home from '@material-ui/icons/Home';
 import { Button } from "@material-ui/core";
 import {  useNavigate } from 'react-router-dom';

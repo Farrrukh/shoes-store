@@ -15,15 +15,18 @@ import {
 const useStyles = makeStyles((theme) => ({
     root: {
         padding: 0,
+        margin:10
       },
       card: {
         maxWidth: 445,
         margin:'0 auto',
+        boxShadow: '0px 0px 7px gray'
 
       },
       img: {
         width: "400px",
         margin: "0 auto",
+        boxShadow:'0px 0px 7px gray'
       },
       btn: {
         backgroundColor: "#3f51b5",
