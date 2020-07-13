@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route,Routes } from 'react-router-dom'
 import Cart from './Component/Cart'
 import Home from './Component/Home'
 // import ProductList from './Component/ProductList'
-import Slider from './Component/Slider'
+// import Slider from './Component/Slider'
 import {GlobalProvider} from './Context/CreateContext'
 import Footer from './Component/Footer'
 function App() {
@@ -17,7 +17,7 @@ function App() {
           <div className="container" >     
           <Router>
           <Header/>
-          <Slider/>
+          {/* <Slider/> */}
               <Routes>
                 <Route path='/' element={<Home />}></Route>
                 
