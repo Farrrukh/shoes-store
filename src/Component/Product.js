@@ -15,7 +15,7 @@ import {
 const useStyles = makeStyles((theme) => ({
     root: {
         padding: 0,
-        margin:10
+        margin:'10px'
       },
       card: {
         maxWidth: 445,
